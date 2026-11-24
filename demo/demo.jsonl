@@ -1,0 +1,5 @@
+{"task_id": "scene-7-reading", "question": "What is the value of Series 1 at Q1?", "answer": "33.74", "correct": true}
+{"task_id": "scene-7-comparison", "question": "Which series is highest at Q1?", "answer": "Series 2", "correct": true}
+{"task_id": "scene-7-relational", "question": "Which series does color #3366cc represent?", "answer": "Series 1", "correct": true}
+{"task_id": "scene-7-multi_step", "question": "By what percent did Series 1 change from Q1 to Q5?", "answer": "61.58861885002964", "correct": true}
+{"task_id": "scene-7-trap_detection", "question": "Is the vertical axis truncated?", "answer": "True", "correct": true}
