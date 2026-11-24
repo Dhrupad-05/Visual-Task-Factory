@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools==75.6.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "visual-task-factory"
+version = "0.1.0"
+description = "Deterministic synthetic chart evaluation pipeline"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "pydantic==2.10.6",
+    "typer==0.15.1",
+]
+
+[project.scripts]
+vtf = "vtf.cli:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["."]
+
+[tool.setuptools.packages.find]
+include = ["vtf*"]

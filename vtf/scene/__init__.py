@@ -1,0 +1,1 @@
+"""Scene specifications and generation."""
