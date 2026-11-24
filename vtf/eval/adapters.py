@@ -23,7 +23,8 @@ class MockModelAdapter:
             raise ValueError("provide response or a non-empty responses list")
         if response is not None and responses is not None:
             raise ValueError("provide response or responses, not both")
-        self._responses = [response] if response is not None else list(responses or [])
+        self._repeat_response = response
+        self._responses = [] if response is not None else list(responses or [])
         self.calls = 0
 
     def ask(self, image_path: Path, prompt: str) -> str:
@@ -33,8 +34,8 @@ class MockModelAdapter:
             raise FileNotFoundError(image_path)
         if not prompt.strip():
             raise ValueError("prompt must not be blank")
-        if self.calls >= len(self._responses):
+        if self._repeat_response is None and self.calls >= len(self._responses):
             raise RuntimeError("mock response sequence exhausted")
-        response = self._responses[self.calls]
+        response = self._repeat_response if self._repeat_response is not None else self._responses[self.calls]
         self.calls += 1
         return response
