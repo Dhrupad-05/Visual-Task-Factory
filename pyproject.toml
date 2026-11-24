@@ -8,6 +8,8 @@ version = "0.1.0"
 description = "Deterministic synthetic chart evaluation pipeline"
 requires-python = ">=3.11,<3.14"
 dependencies = [
+    "matplotlib==3.10.0",
+    "numpy==2.5.1",
     "pydantic==2.10.6",
     "typer==0.15.1",
 ]
